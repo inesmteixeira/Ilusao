@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Illusion</title>
+	<link rel="stylesheet" type="text/css" href="ilusao.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<script src="script.js"></script>
+<script src="script.js"></script>
+</head>
+    
+<body>
+
+<div class="fundo" id="mydiv">
+ 
+ 
+<div class= "fundo">
+    <img class="video" src="images/optical_illusion.gif">
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="page-wrapper">
+  <a class="btn trigger" href="javascript:;">THE END</a>
+
+</div>
+
+
+<div class="modal-wrapper">
+  <div class="modal">
+   
+    <div class="head">
+<a class="scroll" href="index.html"><img height="42" width="42" src="images/icon.png"></a>
+       </div>
+    
+    
+    <div class="content">
+                 <h1>Our visual system remains too limited to tackle all of the information our eyes take in.
+                 <br>For that our brain would need to be bigger than a building, and still then it wouldn’t be enough.
+                 <br><br>
+                 <b>Seeing, then, is certainly not always believing.</b>
+                 </h1>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+
+<div id="countdowntimer">20</div>
+
+<script>
+    var timeleft = 20;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script>
+
+   
+   <!-- contagem -->
+
+
+<script>
+var fade_out = function() {
+  $("#countdowntimer").fadeOut().empty();
+}
+
+setTimeout(fade_out, 20000);
+    
+</script>
+   
+<!-- fundo -->
+
+
+<script>
+var fade_out = function() {
+  $("#mydiv").fadeOut().empty();
+}
+
+setTimeout(fade_out, 20000);
+    
+</script>
+
+
+<!-- modal -->
+
+<script>
+$( document ).ready(function() {
+  $('.trigger').click(function() {
+     $('.modal-wrapper').toggleClass('open');
+    $('.page-wrapper').toggleClass('blur');
+     return false;
+  });
+});
+</script>
+   
+    
+</body>
+</html>

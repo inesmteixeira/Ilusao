@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Illusion</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-3.1.1.min.js"></script>
+            <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/script.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+
+
+<body>
+
+
+
+
+
+<div class="fundo">
+    <video autoplay loop class="video">
+      <source src="images/spinningeye.mp4" type="video/mp4">
+    </video>
+    
+</div>
+
+
+
+
+
+<div class="main">
+</div>
+
+
+
+<div class="transparente">
+    
+
+     
+         
+
+    <div class="olhomove">
+            <div id="eye"><i><i><i><i><s></s><u></u></i></i></i></i></div>
+ 
+    </div>
+    
+    <a class="scroll" href="#section2"><img height="42" width="42" src="images/eye1.png"></a>
+    
+</div>
+   
+   
+
+   <div class="quadro" id="section2">
+<h1>Can you believe your eyes?</h1>
+
+<video class="olho" autoplay muted>
+  <source src="images/macro.mp4" type="video/mp4">
+</video>
+</div> 
+
+<div class="ultimo">
+    <h2>Your eyes trick your mind?</h2>
+    
+    <a href="magic.html">Come and find out...</a>
+
+</div>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+    
+    
+    
+    var mouseX = 0, mouseY = 0, limitX = 20, limitY = 20;
+$(window).mousemove(function(e){
+  var offset = $('#eye i i i i').offset();
+   mouseX = Math.min(e.pageX - offset.left, limitX);
+   mouseY = Math.min(e.pageY - offset.top, limitY);
+   if (mouseX < 0) mouseX = 0;
+   if (mouseY < 0) mouseY = 0;
+});
+
+var follower = $('#eye u'), xp = 0, yp = 0,
+loop = setInterval(function(){
+    xp += (mouseX - xp) / 1;
+    yp += (mouseY - yp) / 1;
+    follower.css({left:xp, top:yp});
+    
+}, 30);
+</script>
+
+</body>
+</html>
